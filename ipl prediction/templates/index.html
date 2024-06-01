@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="card text-center">
+        <div class="card-header">IPL Match Prediction using Machine Learning</div>
+        <div class="card-body">
+            <h5 class="card-title">By Akshitha</h5>
+        </div>
+    </div>
+    <div class="container">
+        <form action="/predict" method="post">
+            <fieldset>
+                <legend>Input Values:</legend>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">City</label>
+                    <select name="city" class="form-control" id="exampleFormControlSelect1">
+                        <option>Mumbai</option>
+                        <option>Delhi</option>
+                        <option>Bangalore</option>
+                        <option>Chennai</option>
+                        <option>Kolkata</option>
+                        <option>Pune</option>
+                        <option>Hyderabad</option>
+                        <option>Chandigarh</option>
+                        <option>Jaipur</option>
+                        <option>Kochi</option>
+                        <option>Dharmasala</option>
+                        <option>Visakhapatnam</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Home Team</label>
+                    <select name="Home" class="form-control" id="exampleFormControlSelect1">
+                        <option>Mumbai Indians</option>
+                        <option>Delhi Capitals</option>
+                        <option>Sunrisers Hyderabad</option>
+                        <option>Royal Challengers Bangalore</option>
+                        <option>Chennai Super Kings</option>
+                        <option>Kolkata Knight Riders</option>
+                        <option>Rajasthan Royals</option>
+                        <option>Kings XI Punjab</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Away Team</label>
+                    <select name="Away" class="form-control" id="exampleFormControlSelect1">
+                        <option>Delhi Capitals</option>
+                        <option>Mumbai Indians</option>
+                        <option>Sunrisers Hyderabad</option>
+                        <option>Royal Challengers Bangalore</option>
+                        <option>Chennai Super Kings</option>
+                        <option>Kolkata Knight Riders</option>
+                        <option>Rajasthan Royals</option>
+                        <option>Kings XI Punjab</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Toss Winner</label>
+                    <select name="toss_winner" class="form-control" id="exampleFormControlSelect1">
+                        <option>Home Team</option>
+                        <option>Away Team</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Toss Decision</label>
+                    <select name="toss_decision" class="form-control" id="exampleFormControlSelect1">
+                        <option>bat</option>
+                        <option>field</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Winner</label>
+                    <select name="winner" class="form-control" id="exampleFormControlSelect1">
+                        <option>Home Team</option>
+                        <option>Away Team</option>
+                        <option>Tie</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Result</label>
+                    <select name="result" class="form-control" id="exampleFormControlSelect1">
+                        <option>Home Win</option>
+                        <option>Away Win</option>
+                        <option>Tie</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Venue</label>
+                    <select name="venue" class="form-control" id="exampleFormControlSelect1">
+                        <option>Wankhede Stadium</option>
+                        <option>Eden Gardens</option>
+                        <option>M. Chinnaswamy Stadium</option>
+                        <option>Rajiv Gandhi International Stadium</option>
+                        <option>Subrata Roy Sahara Stadium</option>
+                        <option>Maharashtra Cricket Association Stadium</option>
+                        <option>Holkar Stadium</option>
+                        <option>Brabourne Stadium</option>
+                        <option>MA Chidambaram Stadium</option>
+                        <option>SAI Stadium</option>
+                        <option>Barabati Stadium</option>
+                        <option>Rajkot Cricket Stadium</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Tournament</label>
+                    <select name="tournament" class="form-control" id="exampleFormControlSelect1">
+                        <option>IPL 2020</option>
+                        <option>IPL 2021</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Season</label>
+                    <select name="season" class="form-control" id="exampleFormControlSelect1">
+                        <option>Spring</option>
+                        <option>Summer</option>
+                        <option>Autumn</option>
+                        <option>Winter</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Day</label>
+                    <select name="day" class="form-control" id="exampleFormControlSelect1">
+                        <option>Sunday</option>
+                        <option>Monday</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Friday</option>
+                        <option>Saturday</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Predict</button>
+                <script>
+                    const button = document.querySelector('.btn');
+                    button.addEventListener('click', () => {
+                        window.open('result.html', '_blank');
+                    });
+                </script>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
